@@ -7,20 +7,20 @@ module Espresso.Util.Network
   , gitClone'
   ) where
 
-import qualified Data.ByteString.Lazy as BL
-import Network.HTTP.Simple (Request, getResponseBody, httpLBS)
+import Network.HTTP.Conduit
+
+import qualified Data.ByteString.Char8 as B8
 
 import System.Environment (getEnv)
 import System.Process (callCommand)
 
-curl' :: Request -> FilePath -> IO ()
-curl' link path =
-  httpLBS link >>= \r ->
-    getEnv "HOME" >>= \home -> BL.writeFile (home ++ path) $ getResponseBody r
+curl' :: String -> FilePath -> IO ()
+curl' url path = undefined
 
-curl :: Request -> FilePath -> IO ()
-curl link path = httpLBS link >>= \r -> BL.writeFile path $ getResponseBody r
+curl :: String -> FilePath -> IO ()
+curl url path = undefined
 
+-- I need to figure out a way to download files with `curl`, but without using `Request`
 gitClone' :: String -> FilePath -> IO ()
 gitClone' repo path =
   getEnv "HOME" >>= \home ->
