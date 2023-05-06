@@ -41,6 +41,8 @@ library
       , yaml
       , aeson
       , text
+      , http-client
+      , network-uri
     hs-source-dirs:   lib
     default-language: Haskell2010
 

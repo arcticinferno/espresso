@@ -27,8 +27,8 @@ instance FromJSON AlacrittyConf where
 aSubClone :: [(Text, Text)] -> IO ()
 aSubClone = mapM_ (\(name, url) -> gitClone (unpack name) (unpack url))
 
-aSubCurl :: [(Request, Text)] -> IO ()
-aSubCurl = mapM_ (\(name, url) -> curl name (unpack url))
+aSubCurl :: [(Text, Text)] -> IO ()
+aSubCurl = mapM_ (\(name, url) -> curl (unpack name) (unpack url))
 
 execAlacritty :: AlacrittyConf -> IO ()
 execAlacritty (AlacrittyConf Nothing Nothing Nothing Nothing) = return ()
