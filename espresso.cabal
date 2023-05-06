@@ -1,6 +1,6 @@
 cabal-version:      3.0
 name:               espresso
-version: 0.0.0.2
+version: 0.0.0.3
 synopsis:
 
 -- A longer description of the package.
@@ -22,9 +22,11 @@ extra-source-files: CHANGELOG.md
 library
     exposed-modules:
         Espresso
+        Espresso.Types
         Espresso.Util
         Espresso.Util.Network
         Espresso.Programs
+        Espresso.Programs.Alacritty
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -36,6 +38,9 @@ library
       , http-conduit
       , bytestring
       , process
+      , yaml
+      , aeson
+      , text
     hs-source-dirs:   lib
     default-language: Haskell2010
 
