@@ -1,6 +1,6 @@
 cabal-version:      3.0
 name:               espresso
-version: 0.0.0.5
+version: 0.0.0.6
 synopsis:
 
 -- A longer description of the package.
@@ -25,6 +25,7 @@ library
         Espresso.Types
         Espresso.Util
         Espresso.Util.Network
+        Espresso.Util.Warnings
         Espresso.Programs
         Espresso.Programs.Alacritty
 
